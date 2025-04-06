@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Management System</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-brand">
+                <i class="fas fa-calendar-alt"></i>
+                <span>EventPro</span>
+            </div>
+            <div class="navbar-links" id="navbarLinks">
+                <a href="#" class="nav-link active" id="navHome"><i class="fas fa-home"></i> Home</a>
+                <a href="#" class="nav-link" id="navEvents"><i class="fas fa-calendar-check"></i> Events</a>
+                <a href="#" class="nav-link" id="navAbout"><i class="fas fa-info-circle"></i> About</a>
+                <a href="#" class="nav-link" id="navContact"><i class="fas fa-envelope"></i> Contact</a>
+            </div>
+            <div class="navbar-toggle" id="navbarToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-calendar-alt"></i> Event Management System</h1>
+        </header>
+
+        <div class="main-content">
+            <div class="sidebar">
+                <button id="addEventBtn" class="active"><i class="fas fa-plus-circle"></i> Add Event</button>
+                <button id="viewEventsBtn"><i class="fas fa-list"></i> View Events</button>
+                <button id="upcomingEventsBtn"><i class="fas fa-calendar-day"></i> Upcoming Events</button>
+                <button id="pastEventsBtn"><i class="fas fa-history"></i> Past Events</button>
+            </div>
+
+            <div class="content-area">
+                <!-- Add Event Form -->
+                <div id="addEventSection" class="content-section">
+                    <h2>Add New Event</h2>
+                    <form id="eventForm">
+                        <div class="form-group">
+                            <label for="eventName">Event Name:</label>
+                            <input type="text" id="eventName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="eventDate">Event Date:</label>
+                            <input type="date" id="eventDate" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="eventTime">Event Time:</label>
+                            <input type="time" id="eventTime" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="eventLocation">Location:</label>
+                            <input type="text" id="eventLocation" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="eventDescription">Description:</label>
+                            <textarea id="eventDescription" rows="4"></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Add Event</button>
+                    </form>
+                </div>
+
+                <!-- View Events Section -->
+                <div id="viewEventsSection" class="content-section" style="display: none;">
+                    <h2>All Events</h2>
+                    <div class="search-filter">
+                        <input type="text" id="searchEvent" placeholder="Search events...">
+                        <select id="filterEvents">
+                            <option value="all">All Events</option>
+                            <option value="upcoming">Upcoming</option>
+                            <option value="past">Past</option>
+                        </select>
+                    </div>
+                    <div id="eventsList" class="events-list">
+                        <!-- Events will be displayed here -->
+                    </div>
+                </div>
+
+                <!-- Upcoming Events Section -->
+                <div id="upcomingEventsSection" class="content-section" style="display: none;">
+                    <h2>Upcoming Events</h2>
+                    <div id="upcomingEventsList" class="events-list">
+                        <!-- Upcoming events will be displayed here -->
+                    </div>
+                </div>
+
+                <!-- Past Events Section -->
+                <div id="pastEventsSection" class="content-section" style="display: none;">
+                    <h2>Past Events</h2>
+                    <div id="pastEventsList" class="events-list">
+                        <!-- Past events will be displayed here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About EventPro</h3>
+                    <p>EventPro is a comprehensive event management system designed to help you organize and manage all your events in one place.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#" class="footer-link" id="footerHome"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="#" class="footer-link" id="footerEvents"><i class="fas fa-chevron-right"></i> Events</a></li>
+                        <li><a href="#" class="footer-link" id="footerAbout"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="#" class="footer-link" id="footerContact"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 23 Event Street, Pune, India</p>
+                    <p><i class="fas fa-phone"></i> +91 8623004425</p>
+                    <p><i class="fas fa-envelope"></i> info@eventpro.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 EventPro. All rights reserved.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="https://github.com/PayalJadhav013"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/payal-jadhav-66254b247/"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Event Details Modal -->
+    <div id="eventModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2 id="modalEventName"></h2>
+            <p><strong>Date:</strong> <span id="modalEventDate"></span></p>
+            <p><strong>Time:</strong> <span id="modalEventTime"></span></p>
+            <p><strong>Location:</strong> <span id="modalEventLocation"></span></p>
+            <p><strong>Description:</strong> <span id="modalEventDescription"></span></p>
+            <div class="modal-actions">
+                <button id="editEventBtn" class="edit-btn">Edit</button>
+                <button id="deleteEventBtn" class="delete-btn">Delete</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
